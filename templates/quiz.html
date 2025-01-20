@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ subject | capitalize }} Quiz</title>
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ subject | capitalize }} Quiz</h1>
+    
+    <form action="{{ url_for('submit_quiz') }}" method="post">
+        {% for question in quiz %}
+        <div class="question">
+            <p>{{ loop.index }}. {{ question['question'] }}</p>
+            <select name="q{{ question['_id'] }}" required>
+                <option value="" disabled selected>Select your answer</option>
+                {% for option in question['options'] %}
+                <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        {% endfor %}
+        
+        <h2>Student Details</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="rollno">Roll Number:</label>
+        <input type="text" id="rollno" name="rollno" required><br>
+        <label for="branch">Branch:</label>
+        <input type="text" id="branch" name="branch" required><br>
+        <label for="section">Section:</label>
+        <input type="text" id="section" name="section" required><br>
+        
+        <button type="submit_quiz">Submit Answers</button>
+    </form>
+</body>
+</html>

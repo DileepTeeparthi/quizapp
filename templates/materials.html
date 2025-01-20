@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials</title>
+    <style>
+        body {
+            background-image: url('/static/images/logo4.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            padding: 20px;
+            border: 3px solid #007bff; /* Blue border */
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            padding: 10px;
+            display: inline-block;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #007bff;
+            color: white;
+        }   
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materials.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Materials</h2>
+        <ul>
+            <!-- Link to PDF viewer with the pdf_name parameter -->
+            <li><a href="{{ url_for('view_pdf', pdf_name='data_science.pdf') }}">Data Science</a></li>
+            <li><a href="{{ url_for('view_pdf', pdf_name='shopping Site Design.pdf') }}">Web Development</a></li>
+            <li><a href="{{ url_for('view_pdf', pdf_name='data mining.pdf') }}">Data Mining</a></li>
+            <li><a href="{{ url_for('view_pdf', pdf_name='ppl notes.pdf') }}">Ppl Notes</a></li>
+            <li><a href="{{ url_for('view_pdf', pdf_name='CNS.pdf') }}">CNS</a></li>
+            <li><a href="{{ url_for('view_pdf', pdf_name='Python.pdf') }}">Python</a></li>
+        </ul>
+    </div>
+</body>
+</html>

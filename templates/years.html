@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Year</title>
+</head>
+<body>
+    <h1>Select your year</h1>
+    
+    <!-- Displaying the options dynamically in Flask -->
+    <ul>
+        <li><a href="{{ url_for('first_year') }}">1st Year</a></li>
+        <li><a href="{{ url_for('second_year') }}">2nd Year</a></li>
+        <li><a href="{{ url_for('third_year') }}">3rd Year</a></li>
+        <li><a href="{{ url_for('fourth_year') }}">4th Year</a></li>
+    </ul>
+</body>
+</html>
